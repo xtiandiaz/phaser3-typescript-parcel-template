@@ -1,14 +1,13 @@
 import Phaser from 'phaser'
+import images from '../scripts/images'
 
-export default class HelloWorldScene extends Phaser.Scene
-{
-	constructor()
-	{
-		super('hello-world')
+export default class GameScene extends Phaser.Scene {
+
+	constructor() {
+		super('game')
 	}
 
-	preload()
-    {
+	preload() {
         this.load.setBaseURL('http://labs.phaser.io')
 
         this.load.image('sky', 'assets/skies/space3.png')
@@ -16,8 +15,7 @@ export default class HelloWorldScene extends Phaser.Scene
         this.load.image('red', 'assets/particles/red.png')
     }
 
-    create()
-    {
+    create() {
         this.add.image(400, 300, 'sky')
 
         const particles = this.add.particles('red')
